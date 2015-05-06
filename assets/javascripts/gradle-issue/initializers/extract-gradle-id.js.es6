@@ -5,13 +5,13 @@ export default {
 
     TopicController.reopen({
       gradleBugId: function() {
-        const tags = this.get('tags') || [];
+        const tags = this.get('model.tags') || [];
         const bugTag = tags.find(t => /^gradle\-\d+$/i.test(t));
 
         if (bugTag) {
           return bugTag.toUpperCase();
         }
-      }.property('tags.@each'),
+      }.property('model.tags.@each'),
 
       gradleBugUrl: function() {
         return "http://issues.gradle.org/browse/" + this.get('gradleBugId');
