@@ -1,7 +1,7 @@
 export default {
   setupComponent(args, component) {
     const tags = args.model.get("tags") || [];
-    const bugTag = tags.find(t => /^gradle\-\d+$/i.test(t));
+    const bugTag = tags.find((t) => /^gradle\-\d+$/i.test(t));
 
     if (bugTag) {
       component.set("gradleBugId", bugTag);
@@ -10,5 +10,5 @@ export default {
         `http://issues.gradle.org/browse/${bugTag}`
       );
     }
-  }
+  },
 };
