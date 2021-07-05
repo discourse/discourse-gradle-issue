@@ -1,7 +1,10 @@
 {
+  "name": "discourse-gradle-issue",
+  "version": "0.1",
+  "repository": "https://github.com/discourse/discourse-gradle-issue",
   "author": "Discourse",
   "license": "MIT",
   "devDependencies": {
-    "eslint-config-discourse": "latest"
+    "eslint-config-discourse": "^1.1.8"
   }
 }
