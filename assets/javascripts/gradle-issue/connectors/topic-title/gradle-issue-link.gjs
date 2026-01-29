@@ -7,10 +7,11 @@ export default class GradleIssueLink extends Component {
   init() {
     super.init(...arguments);
     const tags = this.model.get("tags") || [];
-    const bugTag = tags.find((t) => /^gradle\-\d+$/i.test(t));
+    const bugTag = tags.find((t) => /^gradle\-\d+$/i.test(t.name ?? t));
     if (bugTag) {
-      this.set("gradleBugId", bugTag);
-      this.set("gradleBugUrl", `http://issues.gradle.org/browse/${bugTag}`);
+      const bugTagName = bugTag.name ?? bugTag;
+      this.set("gradleBugId", bugTagName);
+      this.set("gradleBugUrl", `http://issues.gradle.org/browse/${bugTagName}`);
     }
   }
 
